@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="C:\Users\jorge\Desktop\work\style.css">
+<html lang="en">
+
+
 <head>
-<title>YFITOPS</title>
+  <meta charset="UTF-8">
+  <title>YFITOPS</title>
+  <link rel="stylesheet" href="./style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     
-<h1>YFITOPS</h1>
+  <h1>YFITOPS</h1>
 
-<a href="https://www.google.com">SEARCH BY GOOGLE</a>
-<form class="w3-container w3-card-4" action="/action_page.php">
+  <a href="https://www.google.com">SEARCH BY GOOGLE</a>
+
+  <!-- <form class="w3-container w3-card-4" action="/action_page.php">
     <p>Search for your song right here!</p>
     <p>      
-    <label class="w3-text-blue"><b>Song name</b></label>
-    <input class="w3-input w3-border" name="song" type="text"></p>
+    <label class="w3-text-blue"><b>Artist Name</b></label>
+    <input id="artist" class="w3-input w3-border" name="q" type="search" placeholder="Enter artist name here..."></p>
     <p>      
    
     <p>      
-    <button class="w3-btn w3-blue">SEARCH</button></p>
-  </form>
-<p>
+    <button id="submit" class="w3-btn w3-blue">SEARCH</button></p>
+  </form> -->
+
+  <input id="artist" type="search" name="q" placeholder="Enter an artist's name...">
+  <button id="submit">Search</button>
+
+  <p>
     <h3>Group Members:</h3>
     <li>Jorge Fiallos</li>
     <img src="https://i.redd.it/wg5qzdwze9m71.jpg" width="100" height="100">
@@ -29,7 +40,15 @@
     <img src="https://www.freesvgdownload.com/wp-content/uploads/2021/10/mario.jpg" width="100" height="100">
     <li>Joseph Sell</li>
     <img src="https://files.cults3d.com/uploaders/15344469/illustration-file/74cc8b44-e659-4d23-be16-b0784c052942/sonic.JPG" width="100" height="100">
-</p>
+  </p>
 
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/advancedFormat.js"></script>
+  <script>dayjs.extend(window.dayjs_plugin_advancedFormat)</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+
+  <script src="./script.js"></script>
 </body>
+
 </html>
