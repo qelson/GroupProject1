@@ -1,0 +1,37 @@
+body {
+    background-image: url('https://i.imgur.com/2dxaFs9.jpeg;');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+h1 {
+    text-decoration:underline;
+    color:rgb(104, 200, 219);
+    text-align:center
+}
+h3 {
+    color:aliceblue
+}
+p {
+    text-shadow: 1in;
+    color:rgb(204, 239, 152);
+}
+
+li {
+    border: 10px solid rgb(145, 141, 78);
+    width: 150px;
+    padding: 10px;
+    margin: 50px;
+    color:rgb(0, 242, 255);
+}
+
+a {
+    color:rgb(153,75,75);
+    text-align: right;
+}
+a:link {
+    color:greenyellow
+}
+a:hover {
+    color:rgb(225, 66, 214)
+}
