@@ -1,6 +1,7 @@
 //DOM references
 var searchButton = document.getElementById('submit');
-
+var artistInformation = document.getElementById("artist-information")
+var eventInformation = document.getElementById("event-information")
 //CURRENTLY UNUSED
 //var musicVideo = document.getElementById('music-video');
 
@@ -27,7 +28,9 @@ function conductSearch () {
             let artistName = event.strArtist;
             let recordLabel = event.strLabel;
             let artistBio = event.strBiographyEN;
-
+var artistPollo = document.createElement("p")
+artistPollo.textContent = artistName
+artistInformation.appendChild(artistPollo)
             console.log(artistName, recordLabel, ' --- ', artistBio);
             //fetchYouTubeVideos(artistId);
     });
@@ -43,7 +46,9 @@ function conductSearch () {
           let eventName = event[i].name;
           let eventAddress = event[i]._embedded.venues[0].name + ", " + event[i]._embedded.venues[0].city.name + ", " + event[i]._embedded.venues[0].state.stateCode;
           let eventDate = dayjs(event[i].dates.start.dateTime).format('h:mmA');
-
+var eventPollo = document.createElement("p")
+eventPollo.textContent = eventName
+eventInformation.appendChild(eventPollo)
           console.log(eventName, eventAddress, eventDate);
         }
       });
