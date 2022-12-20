@@ -55,6 +55,8 @@ eventInformation.appendChild(eventPollo)
 
 }
 
+// localStorage.setItem("artist-information", JSON.stringify(artistInformation))
+// localStorage.setItem("event-information", JSON.stringify(eventInformation))
 
 //Unused Music Video Function --- YouTube Doesn't Allow Embedded Music Videos
 
