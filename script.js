@@ -13,6 +13,14 @@ var latLong = '38.91589793,-77.04028605';
 
 //Main AudioDB Search Function
 function conductSearch () {
+    if (artistInformation.hasChildNodes()) {
+      artistInformation.removeChild(artistInformation.lastChild);
+    }
+    if (eventInformation.hasChildNodes()) {
+      for (let i = 0; i < 20; i++) {
+        eventInformation.removeChild(eventInformation.lastChild);
+      }
+    }
     var inputText = document.getElementById('artist').value;
     console.log(inputText)
     let artist = inputText;
@@ -22,7 +30,7 @@ function conductSearch () {
             return response.json();
         })
         .then(function(data){
-            console.log(data);
+            //console.log(data);
             let event = data.artists[0];
             //var artistId = event.idArtist;
             let artistName = event.strArtist;
@@ -40,7 +48,7 @@ function conductSearch () {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
+        //console.log(data);
         let event = data._embedded.events;
         for (var i = 0; i < event.length; i++) {
           let eventName = event[i].name;
