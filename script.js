@@ -28,31 +28,31 @@ function conductSearch () {
             let artistName = event.strArtist;
             let recordLabel = event.strLabel;
             let artistBio = event.strBiographyEN;
-var artistPollo = document.createElement("p")
-artistPollo.textContent = artistName
-artistInformation.appendChild(artistPollo)
+            var artistPollo = document.createElement("p");
+            artistPollo.textContent = artistName + "---" + "Record Label: " + recordLabel + "---" + "Biography: " + artistBio;
+            artistInformation.appendChild(artistPollo);
             console.log(artistName, recordLabel, ' --- ', artistBio);
             //fetchYouTubeVideos(artistId);
     });
 
-    fetch('http://app.ticketmaster.com/discovery/v2/suggest.json?apikey=UATb9rxr2FbYLjJ1AcWnmdxOlGOpA7j5&geoPoint=' + latLong)
+    fetch('http://app.ticketmaster.com/discovery/v2/events.json?apikey=UATb9rxr2FbYLjJ1AcWnmdxOlGOpA7j5&keyword=' + artist)
     .then(function (response) {
         return response.json();
       })
       .then(function (data) {
         console.log(data);
         let event = data._embedded.events;
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < event.length; i++) {
           let eventName = event[i].name;
-          let eventAddress = event[i]._embedded.venues[0].name + ", " + event[i]._embedded.venues[0].city.name + ", " + event[i]._embedded.venues[0].state.stateCode;
-          let eventDate = dayjs(event[i].dates.start.dateTime).format('h:mmA');
-var eventPollo = document.createElement("p")
-eventPollo.textContent = eventName
-eventInformation.appendChild(eventPollo)
-          console.log(eventName, eventAddress, eventDate);
-        }
+          let location = event[i].dates.timezone;
+          //let eventAddress = event[i]._embedded.venues[0].name + ", " + event[i]._embedded.venues[0].city.name + ", " + event[i]._embedded.venues[0].state.stateCode;
+          let eventDate = dayjs(event[i].dates.start.dateTime).format('dddd, MMMM Do YYYY -- h:mmA');
+          var eventPollo = document.createElement("p")
+          eventPollo.textContent = eventName + " " + location + " " + eventDate;
+          eventInformation.appendChild(eventPollo)
+          //console.log(eventName, location, eventDate);
+          }    
       });
-
 }
 
 // localStorage.setItem("artist-information", JSON.stringify(artistInformation))
