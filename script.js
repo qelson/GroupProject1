@@ -2,6 +2,7 @@
 var searchButton = document.getElementById('submit');
 var artistInformation = document.getElementById("artist-information")
 var eventInformation = document.getElementById("event-information")
+var artistImage = document.getElementById('artist-image');
 //CURRENTLY UNUSED
 //var musicVideo = document.getElementById('music-video');
 
@@ -33,12 +34,14 @@ function conductSearch () {
             //console.log(data);
             let event = data.artists[0];
             //var artistId = event.idArtist;
+            let artistPic = event.strArtistClearart;
             let artistName = event.strArtist;
             let recordLabel = event.strLabel;
             let artistBio = event.strBiographyEN;
             var artistPollo = document.createElement("p");
             artistPollo.textContent = artistName + "---" + "Record Label: " + recordLabel + "---" + "Biography: " + artistBio;
             artistInformation.appendChild(artistPollo);
+            artistImage.src = artistPic;
             console.log(artistName, recordLabel, ' --- ', artistBio);
             //fetchYouTubeVideos(artistId);
     });

@@ -14,6 +14,20 @@ h1 {
     color:rgb(104, 200, 219);
     text-align:center
 }
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#artist-image {
+    height: 281px;
+    width: 500px;
+    background-color: none;
+    text-align: center;
+}
+
 h3 {
     color:aliceblue
 }
@@ -35,6 +49,13 @@ a:link {
 }
 a:hover {
     color:rgb(225, 66, 214)
+}
+
+#group-members-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 footer {
