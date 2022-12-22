@@ -97,3 +97,7 @@ footer {
     background-attachment: relative;
     background-repeat: no-repeat;
   }
+
+  .hide {
+    display: none;
+  }
