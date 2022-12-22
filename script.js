@@ -64,6 +64,10 @@ function conductSearch () {
           //console.log(eventName, location, eventDate);
           }    
       });
+
+  artistInformation.classList.remove("hide");
+  eventInformation.classList.remove("hide");
+  artistImage.classList.remove("hide");
 }
 
 // localStorage.setItem("artist-information", JSON.stringify(artistInformation))
