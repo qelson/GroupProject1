@@ -16,10 +16,10 @@ Quin Group Lead/Github/Front End
 Music API: AudioDB
 Event API: TicketMaster
 
-##Brief Change Log:
+## Brief Change Log:
 
-Dec 12th: First HTML index and CSS style sheets added
-Dec 14th: Added JS script with APIs
-Dec 15th: Added logos & LinkedIn Profiles
-Dec 19th: Added footer and moved LinkedIn Profiles to footer & Local Storage & updated API calls & Reset search data
-Dec 21st: Added Image & minor edits to HTML and CSS
+### Dec 12th: First HTML index and CSS style sheets added
+### Dec 14th: Added JS script with APIs
+### Dec 15th: Added logos & LinkedIn Profiles
+### Dec 19th: Added footer and moved LinkedIn Profiles to footer & Local Storage & updated API calls & Reset search data
+### Dec 21st: Added Image & minor edits to HTML and CSS
