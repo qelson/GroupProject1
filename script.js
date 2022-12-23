@@ -19,6 +19,25 @@ saveButton.addEventListener('click', listSave)
 //This needs to be updatable -- or automatic via geolocation
 var latLong = '38.91589793,-77.04028605';
 
+//GET BOOKMARKS
+
+ListArray.push(JSON.parse(localStorage.getItem('artist-list')));
+console.log(ListArray);
+console.log(ListArray[0].length);
+if (ListArray[0].length > 1) {
+  for (let i = 1; i < ListArray[0].length; i++) {
+    var Li = document.createElement("li");
+    Li.textContent = ListArray[0][i];
+    SavedList.appendChild(Li);
+  }
+
+}
+
+// if (ListArray.length > 0) {
+//   localStorage.getItem('artist-list');
+// }
+
+
 //Main AudioDB Search Function
 function conductSearch () {
     if (artistInformation.hasChildNodes()) {
@@ -81,10 +100,11 @@ function conductSearch () {
 function listSave () {
   var inputText = document.getElementById('artist').value;
   ListArray.push(inputText);
-  console.log(ListArray)
-  var Li = document.createElement("li")
+  console.log(ListArray);
+  var Li = document.createElement("li");
   Li.textContent = inputText;
-  SavedList.appendChild(Li)
+  localStorage.setItem('artist-list', JSON.stringify(ListArray));
+  SavedList.appendChild(Li);
 }
 
 SavedList.addEventListener('click', function(event) {
