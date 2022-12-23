@@ -31,8 +31,19 @@
   </form> -->
   <div>
     <input id="artist" type="search" name="q" placeholder="Enter an artist's name...">
-    <button id="submit">Search</button>
+    <button class="button" type="button" id="submit">Search</button>
+    <button class="button" type="button" id="Save">Bookmark</button>
   </div>
+
+</div>
+  <ul class="dropdown-menu" data-dropdown-menu>
+    <li>
+      <a class="button" href="#">Bookmarks</a>
+      <ul class="menu" id="SavedList">
+      </ul>
+    </li>
+
+  </ul>
 
   <figure class="center">
     <img class="hide" id="artist-image" src="#" alt="Artist Image">
@@ -67,7 +78,8 @@
   <script>dayjs.extend(window.dayjs_plugin_advancedFormat)</script>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
-
+  <script src="./assets/js/app.js"></script> 
+  <script src="js/foundation.min.js"></script>
   <script src="./script.js"></script>
 </body>
 
