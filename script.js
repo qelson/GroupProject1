@@ -3,11 +3,16 @@ var searchButton = document.getElementById('submit');
 var artistInformation = document.getElementById("artist-information")
 var eventInformation = document.getElementById("event-information")
 var artistImage = document.getElementById('artist-image');
+var SavedList = document.getElementById('SavedList')
+var saveButton = document.getElementById('Save')
+
+const ListArray = [];
 //CURRENTLY UNUSED
 //var musicVideo = document.getElementById('music-video');
 
 //Event Listener
 searchButton.addEventListener('click', conductSearch)
+saveButton.addEventListener('click', listSave)
 
 //This needs to be updatable -- or automatic via geolocation
 var latLong = '38.91589793,-77.04028605';
@@ -68,6 +73,15 @@ function conductSearch () {
   artistInformation.classList.remove("hide");
   eventInformation.classList.remove("hide");
   artistImage.classList.remove("hide");
+}
+
+function listSave () {
+  var inputText = document.getElementById('artist').value;
+  ListArray.push(inputText);
+  console.log(ListArray)
+  var Li = document.createElement("li")
+  Li.textContent = inputText;
+  SavedList.appendChild(Li)
 }
 
 // localStorage.setItem("artist-information", JSON.stringify(artistInformation))
