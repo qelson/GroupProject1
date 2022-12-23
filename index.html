@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 
 <head>
@@ -19,31 +19,24 @@
   
   <a href="https://www.google.com">SEARCH BY GOOGLE</a>
 
-  <!-- <form class="w3-container w3-card-4" action="/action_page.php">
-    <p>Search for your song right here!</p>
-    <p>      
-    <label class="w3-text-blue"><b>Artist Name</b></label>
-    <input id="artist" class="w3-input w3-border" name="q" type="search" placeholder="Enter artist name here..."></p>
-    <p>      
-   
-    <p>      
-    <button id="submit" class="w3-btn w3-blue">SEARCH</button></p>
-  </form> -->
   <div>
     <input id="artist" type="search" name="q" placeholder="Enter an artist's name...">
     <button class="button" type="button" id="submit">Search</button>
     <button class="button" type="button" id="Save">Bookmark</button>
   </div>
 
-</div>
-  <ul class="dropdown-menu" data-dropdown-menu>
-    <li>
-      <a class="button" href="#">Bookmarks</a>
-      <ul class="menu" id="SavedList">
+  <div class="row">
+    <div class="columns">
+      <ul class="button" class="dropdown menu" data-dropdown-menu>
+        <li>
+          <a href="#">Bookmarks</a>
+          <ul class="menu" id="SavedList">
+            
+          </ul>
+        </li>
       </ul>
-    </li>
-
-  </ul>
+    </div>
+  </div>
 
   <figure class="center">
     <img class="hide" id="artist-image" src="#" alt="Artist Image">
@@ -78,8 +71,13 @@
   <script>dayjs.extend(window.dayjs_plugin_advancedFormat)</script>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
-  <script src="./assets/js/app.js"></script> 
-  <script src="js/foundation.min.js"></script>
+  <!-- <script src="./assets/js/app.js"></script>  -->
+  <script src="./assets/js/vendor/jquery.js"></script>
+  <script src="./assets/js/vendor/what-input.js"></script>
+  <script src="./assets/js/vendor/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
   <script src="./script.js"></script>
 </body>
 

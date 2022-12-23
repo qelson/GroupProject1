@@ -6,11 +6,13 @@ var artistImage = document.getElementById('artist-image');
 var SavedList = document.getElementById('SavedList')
 var saveButton = document.getElementById('Save')
 
+//BOOKMARK ARRAY
 const ListArray = [];
+
 //CURRENTLY UNUSED
 //var musicVideo = document.getElementById('music-video');
 
-//Event Listener
+//Event Listeners
 searchButton.addEventListener('click', conductSearch)
 saveButton.addEventListener('click', listSave)
 
@@ -75,6 +77,7 @@ function conductSearch () {
   artistImage.classList.remove("hide");
 }
 
+//BOOKMARK FUNCTIONS AND EVENT LISTENERS
 function listSave () {
   var inputText = document.getElementById('artist').value;
   ListArray.push(inputText);
@@ -83,6 +86,15 @@ function listSave () {
   Li.textContent = inputText;
   SavedList.appendChild(Li)
 }
+
+SavedList.addEventListener('click', function(event) {
+  var element = event.target;
+
+  if (element.matches('li') === true) {
+    document.getElementById('artist').value = element.textContent
+    conductSearch();
+  }
+});
 
 // localStorage.setItem("artist-information", JSON.stringify(artistInformation))
 // localStorage.setItem("event-information", JSON.stringify(eventInformation))
