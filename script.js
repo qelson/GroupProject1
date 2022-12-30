@@ -1,13 +1,21 @@
 //DOM references
 var searchButton = document.getElementById('submit');
-var artistInformation = document.getElementById("artist-information")
-var eventInformation = document.getElementById("event-information")
+var artistInformation = document.getElementById("artist-information");
+var eventInformation = document.getElementById("event-information");
 var artistImage = document.getElementById('artist-image');
-var SavedList = document.getElementById('SavedList')
-var saveButton = document.getElementById('Save')
+var SavedList = document.getElementById('SavedList');
+var saveButton = document.getElementById('Save');
+var footer = document.getElementById('footer');
 
 //BOOKMARK ARRAY
 const ListArray = [];
+
+//LOCAL STORAGE OBJ
+var keyObj = localStorage.getItem('artist-list');
+
+if (keyObj != null) {
+  loadBookmarks();
+}
 
 //CURRENTLY UNUSED
 //var musicVideo = document.getElementById('music-video');
@@ -16,22 +24,28 @@ const ListArray = [];
 searchButton.addEventListener('click', conductSearch)
 saveButton.addEventListener('click', listSave)
 
+//CURRENTLY UNUSED
 //This needs to be updatable -- or automatic via geolocation
-var latLong = '38.91589793,-77.04028605';
+// var latLong = '38.91589793,-77.04028605';
 
 //GET BOOKMARKS
+function loadBookmarks () {
+  ListArray.push(keyObj);
+  const newListArray = ListArray[0].split(',');
 
-ListArray.push(JSON.parse(localStorage.getItem('artist-list')));
-console.log(ListArray);
-console.log(ListArray[0].length);
-if (ListArray[0].length > 1) {
-  for (let i = 1; i < ListArray[0].length; i++) {
+  for (let i = 0; i < newListArray.length; i++) {
     var Li = document.createElement("li");
-    Li.textContent = ListArray[0][i];
+    Li.textContent = newListArray[i];
     SavedList.appendChild(Li);
   }
-
 }
+
+// if (localStorage.getItem('artist-list') != null) {
+//   newListArray.push((localStorage.getItem('artist-list')));
+//   localStorage.clear('artist-list');
+// }
+
+
 
 // if (ListArray.length > 0) {
 //   localStorage.getItem('artist-list');
@@ -94,6 +108,7 @@ function conductSearch () {
   artistInformation.classList.remove("hide");
   eventInformation.classList.remove("hide");
   artistImage.classList.remove("hide");
+  footer.setAttribute('style', 'position: relative');
 }
 
 //BOOKMARK FUNCTIONS AND EVENT LISTENERS
@@ -103,9 +118,14 @@ function listSave () {
   console.log(ListArray);
   var Li = document.createElement("li");
   Li.textContent = inputText;
-  localStorage.setItem('artist-list', JSON.stringify(ListArray));
   SavedList.appendChild(Li);
+  localStorage.setItem('artist-list', ListArray);
+  //console.log(localStorage.getItem('artist-list'));
 }
+
+// localStorage.setItem('artist-list', JSON.stringify(ListArray));
+// var strArray = JSON.stringify(ListArray);
+
 
 SavedList.addEventListener('click', function(event) {
   var element = event.target;

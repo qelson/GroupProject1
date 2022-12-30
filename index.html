@@ -17,36 +17,53 @@
     
   <h1><img src="./assets/images/project1logo.png" width="500" height="100"></h1>
   
-  <a href="https://www.google.com">SEARCH BY GOOGLE</a>
+  <!-- <a href="https://www.google.com">SEARCH BY GOOGLE</a> -->
 
-  <div>
-    <input id="artist" type="search" name="q" placeholder="Enter an artist's name...">
-    <button class="button" type="button" id="submit">Search</button>
-    <button class="button" type="button" id="Save">Bookmark</button>
-  </div>
-
-  <div class="row">
-    <div class="columns">
-      <ul class="button" class="dropdown menu" data-dropdown-menu>
-        <li>
-          <a href="#">Bookmarks</a>
-          <ul class="menu" id="SavedList">
-            
+  <div class="center">
+    <div class="center row">
+      <div class="grid-container">
+        <div class="grid-x">
+          <div class="medium-16 cell">
+            <input id="artist" type="search" name="q" placeholder="Enter an artist's name...">
+          </div>
+        </div>
+      </div>
+    
+      <button class="button" type="button" id="submit">Search</button>
+      <button class="button" type="button" id="Save">Save Artist</button>
+      <div class="row">
+        <div class="columns">
+          <ul class="button" class="dropdown menu" data-dropdown-menu>
+            <li>
+              <a id="bookmark-dropdown" href="#">Bookmarks</a>
+              <ul class="menu" id="SavedList">
+                
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
-  </div>
+    </div>
+  
+    
+  
 
   <figure class="center">
     <img class="hide" id="artist-image" src="#" alt="Artist Image">
   </figure>
   
-  <div id="artist-information" class="artist-info hide"></div>
-  <div id="event-information" class="event-info hide"></div>
+  <div class="center">
+    <div id="artist-information" class="artist-info hide"></div>
+  </div>
+
+  <div class="center">
+    <div id="event-information" class="event-info hide"></div>
+  </div>
+  
   
 
-  <footer>
+  <footer id="footer">
     <h3>Group Members:</h3>
     <div id="group-members-row">
       
@@ -57,27 +74,31 @@
       <p><a href="http://www.linkedin.com/in/alexander-nunez-90b8bb150" target="_blank">Alexander Nunez</a></p>
       <img src="https://media.licdn.com/dms/image/C4D03AQHWDSOJG_1j6Q/profile-displayphoto-shrink_800_800/0/1643466716951?e=1676505600&v=beta&t=4_hCGI2gd2nJuuLT-8Hyo2SX2JGIGNzxHJRQ0BPXue8" width="100" height="100">
       <p><a href="https://www.fbi.gov" target="_blank">Joseph Sell</a></p>
-      <img src="https://files.cults3d.com/uploaders/15344469/illustration-file/74cc8b44-e659-4d23-be16-b0784c052942/sonic.JPG" width="100" height="100">
+      <img src="./assets/images/joe-photo.jpg" width="100" height="100">
     </div>
 
     <div class="footerContent">
-      <p>YFITOPS 2023 all rights reserved ©™️</p>
+      <p id="footerTM">© 2023 by YFITOPS&trade;. All Rights Reserved.</p>
     </div>
   </footer>
 
-
+  <!-- DayJS and Advanced Format -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/advancedFormat.js"></script>
   <script>dayjs.extend(window.dayjs_plugin_advancedFormat)</script>
 
+  <!-- JQuery -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
-  <!-- <script src="./assets/js/app.js"></script>  -->
+  
+  <!-- Start Foundation CSS Import -->
   <script src="./assets/js/vendor/jquery.js"></script>
   <script src="./assets/js/vendor/what-input.js"></script>
   <script src="./assets/js/vendor/foundation.min.js"></script>
   <script>
     $(document).foundation();
   </script>
+
+  <!-- Our JS -->
   <script src="./script.js"></script>
 </body>
 
